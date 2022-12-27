@@ -22,26 +22,26 @@ const Home = () => {
             </Link>
           </div>
           <div className={styles.imageWrapper}>
-            <a href='/peets'>
+            <a href='/removedfeature'>
               <img
                 src='../../server/public/assets/Only-Peets-.png'
                 alt='Santa with Animals'
                 className={styles.image}
               />
             </a>
-            <Link to='/peets' className={styles.links}>
+            <Link to='/removedfeature' className={styles.links}>
               onlypeets
             </Link>
           </div>
           <div className={styles.imageWrapper}>
-            <a href='/drinks'>
+            <a href='/removedfeature'>
               <img
                 src='../../server/public/assets/Drunk-Santa-.png'
                 alt='Drunk Santa'
                 className={styles.image}
               />
             </a>
-            <Link to='/drinks' className={styles.links}>
+            <Link to='/removedfeature' className={styles.links}>
               drunk santa
             </Link>
           </div>
