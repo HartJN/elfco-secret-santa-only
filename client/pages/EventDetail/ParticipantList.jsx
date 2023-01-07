@@ -21,6 +21,7 @@ const ParticipantList = ({ guestList, handleDelete, handleFinalize }) => {
                   onClick={() =>
                     handleDelete(participant.id, participant.event_id)
                   }
+                  type='button'
                 >
                   Delete
                 </button>
@@ -29,7 +30,7 @@ const ParticipantList = ({ guestList, handleDelete, handleFinalize }) => {
           )
         })}
       </div>
-      <button className={styles.drawBtn} onClick={handleFinalize}>
+      <button className={styles.drawBtn} onClick={handleFinalize} type='button'>
         Draw
       </button>
     </>

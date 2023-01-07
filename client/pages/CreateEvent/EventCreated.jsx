@@ -21,7 +21,9 @@ export default function EventCreated({ name, date, link, copyLink }) {
           alt='santa hushing'
           className={styles.santaCopyLinkImg}
         />
-        <button onClick={copyLink}>Copy Link</button>
+        <button onClick={copyLink} type='button'>
+          Copy Link
+        </button>
       </div>
       <img
         src='/server/public/assets/rudolph-v2.png'

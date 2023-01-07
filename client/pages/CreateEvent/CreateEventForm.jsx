@@ -43,7 +43,7 @@ export default function CreateEventForm({
           onChange={(e) => setDate(e.target.value)}
           placeholder='Draw Date'
         />
-        <button>Create Your Event</button>
+        <button type='submit'>Create Your Event</button>
       </form>
       <img
         src='/server/public/assets/santa-small.PNG'

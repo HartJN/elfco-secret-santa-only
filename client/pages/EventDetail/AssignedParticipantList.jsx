@@ -21,6 +21,7 @@ const AssignedParticipantList = ({ guestList, handleDelete }) => {
                 onClick={() =>
                   handleDelete(participant.id, participant.event_id)
                 }
+                type='button'
               >
                 Delete
               </button>

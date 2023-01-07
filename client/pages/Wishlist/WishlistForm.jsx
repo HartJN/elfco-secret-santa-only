@@ -47,7 +47,11 @@ export default function WishlistForm({
               {/* handleText */ newWish.wishlist}
             </h3>
 
-            <button className={styles.editBtn} onClick={handleEdit}>
+            <button
+              className={styles.editBtn}
+              onClick={handleEdit}
+              type='button'
+            >
               Edit Wishlist
             </button>
 
