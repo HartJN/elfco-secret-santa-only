@@ -24,7 +24,7 @@ export default function Dashboard() {
   return (
     <div className={styles.dashboard}>
       <h1>Secret Santa</h1>
-      <hr></hr>
+      <hr />
       <h2>Your events</h2>
       <div className={styles.events}>
         {filterEvents(events).map((event) => (
@@ -50,7 +50,7 @@ export default function Dashboard() {
                 alt='christmas tree'
                 width='40'
                 className={styles.treeImage}
-              ></img>
+              />
             </div>
           </div>
         ))}
