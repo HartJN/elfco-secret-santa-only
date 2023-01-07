@@ -21,7 +21,7 @@ export default function InvitePage() {
         const event = await getEventByInviteCode(invite_id)
         setNewEvent(event)
       } catch (err) {
-        err.message
+        console.error(err.message)
       }
     }
     getEvent()
@@ -41,7 +41,7 @@ export default function InvitePage() {
 
       navigate(`/wishlist/${id}`)
     } catch (err) {
-      err.message
+      console.error(err.message)
     }
   }
 
