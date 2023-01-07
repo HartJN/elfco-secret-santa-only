@@ -58,13 +58,11 @@ const EventDetail = () => {
           handleDelete={handleDelete}
         />
       ) : (
-        <>
-          <ParticipantList
-            guestList={guestList}
-            handleDelete={handleDelete}
-            handleFinalize={handleFinalize}
-          />
-        </>
+        <ParticipantList
+          guestList={guestList}
+          handleDelete={handleDelete}
+          handleFinalize={handleFinalize}
+        />
       )}
       <img
         src='/server/public/assets/tree.PNG'
