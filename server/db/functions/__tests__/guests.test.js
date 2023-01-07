@@ -4,7 +4,6 @@ import config from '../../knexfile.js'
 import {
   createWishlist,
   deleteGuest,
-  getWishlist,
   getWishlistById,
   updatedWishlist,
 } from '../guest.js'
@@ -14,32 +13,6 @@ const testDb = knex(config.test)
 beforeAll(() => testDb.migrate.latest())
 beforeEach(() => testDb.seed.run())
 afterAll(() => testDb.destroy())
-
-// describe('getWishlist', () => {
-//   it('gets the guest table from the database', () => {
-//     return getWishlist(testDb).then((guest) => {
-//       expect(guest).toHaveLength(4)
-//     })
-//   })
-
-//   // it('shows the guest name', () => {
-//   //   return getWishlist(testDb).then((guest) => {
-//   //     expect(guest[0].name).toBe('Bruno')
-//   //   })
-//   // })
-
-//   // it('shows the guests wishlist', () => {
-//   //   return getWishlist(testDb).then((guest) => {
-//   //     expect(guest[1].wishlist).toContain('BBQ and a new lawnmower')
-//   //   })
-//   // })
-
-//   // it('shows the guests guest-code', () => {
-//   //   return getWishlist(testDb).then((guest) => {
-//   //     expect(guest[2].guest_code).toBe('1D9C774D326AD157D6F889ACE9A7DA10')
-//   //   })
-//   // })
-// })
 
 describe('getWishlistByID', () => {
   it('gets a guests from the db by the guest-code', () => {

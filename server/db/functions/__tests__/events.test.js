@@ -3,12 +3,9 @@ import knex from 'knex'
 import config from '../../knexfile.js'
 import {
   createEvent,
-  getEvent,
   getEventById,
-  getEventByInviteCode,
   getEvents,
   getGuestsByEventId,
-  updateStatus,
 } from '../events.js'
 const testDb = knex(config.test)
 
@@ -38,16 +35,6 @@ describe('getEvents', () => {
   })
 })
 
-// describe('getEvent', () => {
-//   test('gets an event from db by the invite id', () => {
-//     return getEvent('F81D9C7', testDb).then((event) => {
-//       expect(event.event_name).toContain(
-//         'Sallys Paper Hat Factory Christmas Party'
-//       )
-//     })
-//   })
-// })
-
 describe('getEventById', () => {
   it('gets the event by the id', () => {
     return getEventById(2, testDb).then((events) => {
@@ -63,22 +50,6 @@ describe('getGuestsByEventId', () => {
     })
   })
 })
-
-// describe('getEventByInviteCode', () => {
-//   it('gets the event by the invite code', () => {
-//     return getEventByInviteCode('57D6F81', testDb).then((events) => {
-//       expect(events.budget).toBe(30)
-//     })
-//   })
-// })
-
-// describe('updateStatus', () => {
-//   it('update events status', () => {
-//     return updateStatus('57D6F81', testDb).then((event) => {
-//       expect(event[0].status).toBe(1)
-//     })
-//   })
-// })
 
 describe('getEventById', () => {
   it('update events status', () => {
