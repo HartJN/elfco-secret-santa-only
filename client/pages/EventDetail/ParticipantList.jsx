@@ -11,9 +11,9 @@ const ParticipantList = ({ guestList, handleDelete, handleFinalize }) => {
             : styles.unsortedGuests
         }
       >
-        {guestList?.map((participant, i) => {
+        {guestList?.map((participant) => {
           return (
-            <div key={i}>
+            <div key={participant.id}>
               <div className={styles.guestWrapper}>
                 <p>{trim(participant.name)}</p>
 

@@ -8,9 +8,9 @@ const AssignedParticipantList = ({ guestList, handleDelete }) => {
         guestList.length > 3 ? styles.sortedGuestsGrid : styles.sortedGuests
       }
     >
-      {guestList?.map((participant, i) => {
+      {guestList?.map((participant) => {
         return (
-          <div key={i} className={styles.assignedGuestWrapper}>
+          <div key={participant.id} className={styles.assignedGuestWrapper}>
             <p>{trim(participant.name)}</p>
 
             <p className={styles.arrowThing}>→</p>
