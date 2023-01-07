@@ -12,7 +12,7 @@ import AssignedParticipantList from './AssignedParticipantList'
 import styles from './EventDetail.module.scss'
 import ParticipantList from './ParticipantList'
 
-const EventDetail = () => {
+export default function EventDetail() {
   const { event_id } = useParams()
 
   const [guestList, setGuestList] = useState([])
@@ -73,5 +73,3 @@ const EventDetail = () => {
     </div>
   )
 }
-
-export default EventDetail

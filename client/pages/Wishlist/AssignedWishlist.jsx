@@ -2,7 +2,7 @@ import { formatDate } from '../../utils/helpers'
 import EventLink from './EventLink'
 import styles from './Wishlist.module.scss'
 
-const AssignedWishlist = ({ event, assignedWishlist, id }) => {
+export default function AssignedWishlist({ event, assignedWishlist, id }) {
   return (
     <>
       <div className={styles.createEventContainer}>
@@ -40,5 +40,3 @@ const AssignedWishlist = ({ event, assignedWishlist, id }) => {
     </>
   )
 }
-
-export default AssignedWishlist

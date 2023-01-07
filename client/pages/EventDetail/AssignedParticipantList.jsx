@@ -1,7 +1,7 @@
 import { trim } from '../../utils/helpers'
 import styles from './EventDetail.module.scss'
 
-const AssignedParticipantList = ({ guestList, handleDelete }) => {
+export default function AssignedParticipantList({ guestList, handleDelete }) {
   return (
     <div
       className={
@@ -32,5 +32,3 @@ const AssignedParticipantList = ({ guestList, handleDelete }) => {
     </div>
   )
 }
-
-export default AssignedParticipantList

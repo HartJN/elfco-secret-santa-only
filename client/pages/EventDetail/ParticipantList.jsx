@@ -1,7 +1,11 @@
 import { trim } from '../../utils/helpers'
 import styles from './EventDetail.module.scss'
 
-const ParticipantList = ({ guestList, handleDelete, handleFinalize }) => {
+export default function ParticipantList({
+  guestList,
+  handleDelete,
+  handleFinalize,
+}) {
   return (
     <>
       <div
@@ -36,5 +40,3 @@ const ParticipantList = ({ guestList, handleDelete, handleFinalize }) => {
     </>
   )
 }
-
-export default ParticipantList

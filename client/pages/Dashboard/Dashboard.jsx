@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { getEvents } from '../../apiClient/event.js'
 import styles from './Dashboard.module.scss'
 
-const Dashboard = () => {
+export default function Dashboard() {
   const [events, setEvents] = useState([])
 
   useEffect(() => {
@@ -58,5 +58,3 @@ const Dashboard = () => {
     </div>
   )
 }
-
-export default Dashboard

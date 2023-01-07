@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './Home.module.scss'
 
-const Home = () => {
+export default function Home() {
   return (
     <div className={styles.home}>
       <div className={styles.imageContainer}>
@@ -48,5 +48,3 @@ const Home = () => {
     </div>
   )
 }
-
-export default Home
