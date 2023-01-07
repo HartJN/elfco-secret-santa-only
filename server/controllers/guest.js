@@ -1,11 +1,22 @@
 import { v4 as uuidv4 } from 'uuid'
 
-import * as db from '../db/functions/guest.js'
+import {
+  createWishlist,
+  deleteGuest,
+  getEventById,
+  getGuestByEventId,
+  getNameById,
+  getWishListByEventId,
+  getWishListByGuestCode,
+  getWishlists,
+  updatedWishlist,
+  updateWishlistGifter,
+} from '../db/functions/guest.js'
 
 export default {
   getWishlist: async (req, res) => {
     try {
-      const result = await db.getWishlists()
+      const result = await getWishlists()
 
       res.json(result)
     } catch (err) {
@@ -18,7 +29,7 @@ export default {
     const id = req.params.id
 
     try {
-      const result = await db.getWishListByGuestCode(id)
+      const result = await getWishListByGuestCode(id)
 
       res.json(result)
     } catch (err) {
@@ -31,7 +42,7 @@ export default {
     const id = req.params.id
 
     try {
-      const result = await db.getWishListByEventId(id)
+      const result = await getWishListByEventId(id)
 
       res.json(result)
     } catch (err) {
@@ -45,7 +56,7 @@ export default {
       const wish = req.body
       wish.guest_code = uuidv4()
 
-      const newWishObj = await db.createWishlist(wish)
+      const newWishObj = await createWishlist(wish)
 
       res.status(201).json(newWishObj)
     } catch (err) {
@@ -59,8 +70,8 @@ export default {
     const wish = req.body
 
     try {
-      await db.updatedWishlist(id, wish)
-      const wishlist = await db.getWishListByGuestCode(id)
+      await updatedWishlist(id, wish)
+      const wishlist = await getWishListByGuestCode(id)
       res.json(wishlist)
     } catch (err) {
       console.error(err.message)
@@ -74,8 +85,8 @@ export default {
     const { gifter_id, guest_code, id } = req.body
 
     try {
-      await db.updateWishlistGifter(gifter_id, guest_code, id)
-      const wishlist = await db.getWishListByGuestCode(id)
+      await updateWishlistGifter(gifter_id, guest_code, id)
+      const wishlist = await getWishListByGuestCode(id)
       res.json(wishlist)
     } catch (err) {
       console.error(err.message)
@@ -90,9 +101,9 @@ export default {
     const { event_id } = req.body
 
     try {
-      await db.deleteGuest(id)
+      await deleteGuest(id)
 
-      const wishlist = await db.getGuestByEventId(event_id)
+      const wishlist = await getGuestByEventId(event_id)
 
       res.json(wishlist)
     } catch (err) {
@@ -107,9 +118,9 @@ export default {
     const { id } = req.params
 
     try {
-      const wishlist = await db.getWishListByGuestCode(id)
+      const wishlist = await getWishListByGuestCode(id)
 
-      const event = await db.getEventById(wishlist[0].event_id)
+      const event = await getEventById(wishlist[0].event_id)
       res.status(200).json(event)
     } catch (err) {
       console.error(err.message)
@@ -123,9 +134,9 @@ export default {
     const { guest_code } = req.params
 
     try {
-      const wishlist = await db.getWishListByGuestCode(guest_code)
+      const wishlist = await getWishListByGuestCode(guest_code)
 
-      const gifter = await db.getNameById(wishlist[0]?.gifter_id)
+      const gifter = await getNameById(wishlist[0]?.gifter_id)
 
       res.status(200).json(gifter)
     } catch (err) {
