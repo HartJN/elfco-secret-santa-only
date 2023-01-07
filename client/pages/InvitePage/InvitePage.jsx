@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { getEventByInviteCode } from '../../apiClient/event'
 import { createGuestApi } from '../../apiClient/guest'
