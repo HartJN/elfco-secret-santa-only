@@ -22,7 +22,7 @@ export function shuffle(array) {
 }
 
 export function filterParticipants(participants, event_id) {
-  return participants.filter((participant) => participant.event_id == event_id)
+  return participants.filter((participant) => participant.event_id === event_id)
 }
 
 export function findGifter(gifter_id, participants) {
