@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './SSHome.module.scss'
 
-const SSHome = () => {
+export default function SSHome() {
   return (
     <div className={styles.SSHomeContainer}>
       <div className={styles.SSHomeWrapper}>
@@ -23,5 +23,3 @@ const SSHome = () => {
     </div>
   )
 }
-
-export default SSHome

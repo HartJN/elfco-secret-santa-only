@@ -52,7 +52,6 @@ async function updateAssignments(assignments, db, guests) {
       .where({ id: assignment.id })
       .update({
         gifter_id: findGifter(assignment.gifter_id, guests),
-        // gifter_name: ,
       })
   })
   await Promise.all(updates)

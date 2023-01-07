@@ -12,7 +12,7 @@ import AssignedParticipantList from './AssignedParticipantList'
 import styles from './EventDetail.module.scss'
 import ParticipantList from './ParticipantList'
 
-const EventDetail = () => {
+export default function EventDetail() {
   const { event_id } = useParams()
 
   const [guestList, setGuestList] = useState([])
@@ -58,13 +58,11 @@ const EventDetail = () => {
           handleDelete={handleDelete}
         />
       ) : (
-        <>
-          <ParticipantList
-            guestList={guestList}
-            handleDelete={handleDelete}
-            handleFinalize={handleFinalize}
-          />
-        </>
+        <ParticipantList
+          guestList={guestList}
+          handleDelete={handleDelete}
+          handleFinalize={handleFinalize}
+        />
       )}
       <img
         src='/server/public/assets/tree.PNG'
@@ -75,5 +73,3 @@ const EventDetail = () => {
     </div>
   )
 }
-
-export default EventDetail

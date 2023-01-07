@@ -1,11 +1,9 @@
 import styles from './Spinner.module.scss'
 
-const Spinner = () => {
+export default function Spinner() {
   return (
     <div className={styles.spinner}>
-      <div className={styles.spinner__circle}></div>
+      <div className={styles.spinner__circle} />
     </div>
   )
 }
-
-export default Spinner

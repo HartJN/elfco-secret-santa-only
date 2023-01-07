@@ -1,16 +1,16 @@
 import { trim } from '../../utils/helpers'
 import styles from './EventDetail.module.scss'
 
-const AssignedParticipantList = ({ guestList, handleDelete }) => {
+export default function AssignedParticipantList({ guestList, handleDelete }) {
   return (
     <div
       className={
         guestList.length > 3 ? styles.sortedGuestsGrid : styles.sortedGuests
       }
     >
-      {guestList?.map((participant, i) => {
+      {guestList?.map((participant) => {
         return (
-          <div key={i} className={styles.assignedGuestWrapper}>
+          <div key={participant.id} className={styles.assignedGuestWrapper}>
             <p>{trim(participant.name)}</p>
 
             <p className={styles.arrowThing}>→</p>
@@ -21,6 +21,7 @@ const AssignedParticipantList = ({ guestList, handleDelete }) => {
                 onClick={() =>
                   handleDelete(participant.id, participant.event_id)
                 }
+                type='button'
               >
                 Delete
               </button>
@@ -31,5 +32,3 @@ const AssignedParticipantList = ({ guestList, handleDelete }) => {
     </div>
   )
 }
-
-export default AssignedParticipantList

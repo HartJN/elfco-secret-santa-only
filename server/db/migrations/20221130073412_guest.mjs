@@ -1,5 +1,5 @@
 export const up = async (knex) => {
-  return knex.schema.createTable('guest', (table) => {
+  await knex.schema.createTable('guest', (table) => {
     table.increments('id')
     table.string('guest_code')
     table.integer('event_id')
@@ -10,5 +10,5 @@ export const up = async (knex) => {
 }
 
 export const down = async (knex) => {
-  return knex.schema.dropTable('guest')
+  await knex.schema.dropTable('guest')
 }

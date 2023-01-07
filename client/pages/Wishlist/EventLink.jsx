@@ -1,6 +1,6 @@
 import styles from './Wishlist.module.scss'
 
-const EventLink = ({ id }) => {
+export default function EventLink({ id }) {
   const copyLink = () => {
     navigator.clipboard.writeText(`localhost:5173/wishlist/${id}`)
   }
@@ -25,5 +25,3 @@ const EventLink = ({ id }) => {
     </div>
   )
 }
-
-export default EventLink

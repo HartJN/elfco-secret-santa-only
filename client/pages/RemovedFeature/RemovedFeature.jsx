@@ -1,28 +1,9 @@
-// import './RemovedFeature.scss'
-
-// const RemovedFeature = () => {
-//   return (
-//     <div className='removed-feature'>
-//       <h1 className='removed-feature__message'>
-//         This feature has been removed in this build.
-//       </h1>
-//       <img
-//         src='/server/public/assets/Secret-Santa-.png'
-//         alt='Feature removed'
-//         className='removed-feature__image'
-//       />
-//     </div>
-//   )
-// }
-
-// export default RemovedFeature
-
 import './RemovedFeature.scss'
 
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const RemovedFeature = () => {
+export default function RemovedFeature() {
   const [countdown, setCountdown] = useState(5)
   const navigate = useNavigate()
 
@@ -54,5 +35,3 @@ const RemovedFeature = () => {
     </div>
   )
 }
-
-export default RemovedFeature

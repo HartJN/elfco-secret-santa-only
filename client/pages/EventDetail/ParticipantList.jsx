@@ -1,7 +1,11 @@
 import { trim } from '../../utils/helpers'
 import styles from './EventDetail.module.scss'
 
-const ParticipantList = ({ guestList, handleDelete, handleFinalize }) => {
+export default function ParticipantList({
+  guestList,
+  handleDelete,
+  handleFinalize,
+}) {
   return (
     <>
       <div
@@ -11,9 +15,9 @@ const ParticipantList = ({ guestList, handleDelete, handleFinalize }) => {
             : styles.unsortedGuests
         }
       >
-        {guestList?.map((participant, i) => {
+        {guestList?.map((participant) => {
           return (
-            <div key={i}>
+            <div key={participant.id}>
               <div className={styles.guestWrapper}>
                 <p>{trim(participant.name)}</p>
 
@@ -21,6 +25,7 @@ const ParticipantList = ({ guestList, handleDelete, handleFinalize }) => {
                   onClick={() =>
                     handleDelete(participant.id, participant.event_id)
                   }
+                  type='button'
                 >
                   Delete
                 </button>
@@ -29,11 +34,9 @@ const ParticipantList = ({ guestList, handleDelete, handleFinalize }) => {
           )
         })}
       </div>
-      <button className={styles.drawBtn} onClick={handleFinalize}>
+      <button className={styles.drawBtn} onClick={handleFinalize} type='button'>
         Draw
       </button>
     </>
   )
 }
-
-export default ParticipantList

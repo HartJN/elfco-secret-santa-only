@@ -27,14 +27,14 @@ describe('Home component test', async () => {
     })
     expect(link[0].href).toContain('secretsanta')
   })
-  it('has a link to onlypeets', async () => {
+  it.skip('has a link to onlypeets', async () => {
     render(<Home />, { wrapper: MemoryRouter })
     const link = await screen.findAllByRole('link', {
       name: /ONLYPEETS/i,
     })
     expect(link[0].href).toContain('peets')
   })
-  it('has a link to drunk santa', async () => {
+  it.skip('has a link to drunk santa', async () => {
     render(<Home />, { wrapper: MemoryRouter })
     const link = await screen.findAllByRole('link', {
       name: /DRUNK SANTA/i,

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { getEvents } from '../../apiClient/event.js'
 import styles from './Dashboard.module.scss'
 
-const Dashboard = () => {
+export default function Dashboard() {
   const [events, setEvents] = useState([])
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboard}>
       <h1>Secret Santa</h1>
-      <hr></hr>
+      <hr />
       <h2>Your events</h2>
       <div className={styles.events}>
         {filterEvents(events).map((event) => (
@@ -50,7 +50,7 @@ const Dashboard = () => {
                 alt='christmas tree'
                 width='40'
                 className={styles.treeImage}
-              ></img>
+              />
             </div>
           </div>
         ))}
@@ -58,5 +58,3 @@ const Dashboard = () => {
     </div>
   )
 }
-
-export default Dashboard

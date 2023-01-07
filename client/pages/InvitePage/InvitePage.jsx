@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import { getEventByInviteCode } from '../../apiClient/event'
 import { createGuestApi } from '../../apiClient/guest'
@@ -21,7 +20,7 @@ export default function InvitePage() {
         const event = await getEventByInviteCode(invite_id)
         setNewEvent(event)
       } catch (err) {
-        err.message
+        console.error(err.message)
       }
     }
     getEvent()
@@ -41,31 +40,29 @@ export default function InvitePage() {
 
       navigate(`/wishlist/${id}`)
     } catch (err) {
-      err.message
+      console.error(err.message)
     }
   }
 
   return (
-    <>
-      <div className={styles.inviteContainer}>
-        <h1 className={styles.header}>Secret Santa</h1>
-        <h2>You have been invited to: </h2>
-        <h3>{event?.event_name}</h3>
-        <p>
-          Your budget is ${event?.budget}. Save the date! Have your gift ready
-          by {formatDate(event?.date)}.
-        </p>
-        <InviteForm
-          guestName={guestName}
-          setGuestName={setGuestName}
-          handleSubmit={handleSubmit}
-        />
-        <img
-          src='/server/public/assets/Secret-Santa-.png'
-          alt='santa hushing'
-          className={styles.santaCopyLinkImg}
-        />
-      </div>
-    </>
+    <div className={styles.inviteContainer}>
+      <h1 className={styles.header}>Secret Santa</h1>
+      <h2>You have been invited to: </h2>
+      <h3>{event?.event_name}</h3>
+      <p>
+        Your budget is ${event?.budget}. Save the date! Have your gift ready by{' '}
+        {formatDate(event?.date)}.
+      </p>
+      <InviteForm
+        guestName={guestName}
+        setGuestName={setGuestName}
+        handleSubmit={handleSubmit}
+      />
+      <img
+        src='/server/public/assets/Secret-Santa-.png'
+        alt='santa hushing'
+        className={styles.santaCopyLinkImg}
+      />
+    </div>
   )
 }
