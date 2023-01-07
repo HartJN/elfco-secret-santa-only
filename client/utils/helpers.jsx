@@ -7,7 +7,7 @@ export const formatDate = (date) => {
   return newDate.toLocaleDateString('en-NZ', options)
 }
 export const trim = (name) => {
-  if (typeof name !== 'string') return
+  if (typeof name !== 'string') return null
 
   if (name.includes(' ')) {
     return (
