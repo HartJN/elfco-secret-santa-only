@@ -61,7 +61,7 @@ npm run dev:client
 ## Features
 
 - Secret Santa events are created and managed using unique IDs (UUIDs)
-- Participants can enter their event name, date, and budget
+- Host can enter their event name, date, and budget
 - Each participant can create a wish list, which is saved using a UUID
 - The event host can view the dashboard and draw names to assign gift partners
 - Gift partners are assigned using a Fisher–Yates shuffle algorithm
