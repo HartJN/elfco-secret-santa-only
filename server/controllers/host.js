@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from 'uuid'
 import { createHostId, getHostId } from '../db/functions/host.js'
 
 export const getHost = async (req, res) => {
-  console.log('hello from getHost controller')
   const { hostId } = req.params
 
   const host = await getHostId(hostId)
@@ -12,7 +11,6 @@ export const getHost = async (req, res) => {
 }
 
 export const createHost = async (req, res) => {
-  console.log('hello from createHost controller')
   try {
     const hostData = req.body
 

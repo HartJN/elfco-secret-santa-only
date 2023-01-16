@@ -5,7 +5,6 @@ import path from 'path'
 
 import eventRoute from './routes/event.js'
 import guestRoute from './routes/guest.js'
-import hostRoute from './routes/host.js'
 import inviteRoute from './routes/invite.js'
 
 const server = express()
@@ -20,7 +19,6 @@ server.get('/api/hello-world', (req, res) => {
 server.use('/api/v1/event', eventRoute)
 server.use('/api/v1/wishlist', guestRoute)
 server.use('/api/v1/invite', inviteRoute)
-server.use('/api/v1/host', hostRoute)
 
 server.use('/api/*', (req, res) => {
   res.sendStatus(404)

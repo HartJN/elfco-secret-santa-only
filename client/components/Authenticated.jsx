@@ -6,11 +6,9 @@ const useIsAuthenticated = () => {
 }
 
 export function IfAuthenticated({ children }) {
-  console.log('hit if authenticated')
   return useIsAuthenticated() ? <>{children}</> : null
 }
 
 export function IfNotAuthenticated({ children }) {
-  console.log('hit if not authenticated')
   return !useIsAuthenticated() ? <>{children}</> : null
 }

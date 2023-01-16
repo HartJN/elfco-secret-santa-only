@@ -43,7 +43,6 @@ export default {
 
   finaliseEvent: async (req, res) => {
     const { event_id } = req.params
-    console.log('🚀 ~ file: event.js:46 ~ finaliseEvent: ~ event_id', event_id)
 
     const event = await finaliseEvent(event_id)
 

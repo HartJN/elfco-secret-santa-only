@@ -58,7 +58,6 @@ export const getEventByInviteCode = async (invite_id) => {
 }
 
 export const getHostId = async (host_id) => {
-  console.log('hello from getHostId apiClient')
   const res = await request(`/api/v1/host/${host_id}`)
   return res.body
 }
@@ -71,6 +70,5 @@ export const getHostId = async (host_id) => {
 
 export const createHost = async () => {
   const { body } = await request.post('/api/v1/host').send()
-  console.log('🚀 ~ file: event.js:64 ~ createHost ~ body', body)
   return body.host_id
 }
