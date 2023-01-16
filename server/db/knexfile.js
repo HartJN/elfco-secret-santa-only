@@ -39,10 +39,7 @@ export default {
   },
   production: {
     ...defaults,
-    client: 'sqlite3',
-    connection: {
-      filename: '/app/storage/prod.sqlite3',
-    },
-    useNullAsDefault: true,
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
   },
 }
