@@ -44,7 +44,7 @@ export default {
     pool: {
       min: 2,
       max: 10,
-      acquireTimeout: 10000,
+      createTimeoutMillis: 10000,
     },
   },
 }
