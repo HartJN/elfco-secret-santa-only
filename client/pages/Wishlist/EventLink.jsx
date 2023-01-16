@@ -15,7 +15,7 @@ export default function EventLink({ id }) {
         <div className={styles.copyLinkContainer}>
           <p>Save this link to come back to your wishlist</p>
           <img
-            src='/server/public/assets/Secret-Santa-.png'
+            src='/client/public/assets/Secret-Santa-.png'
             alt='santa hushing'
             className={styles.santaCopyLinkImg}
           />

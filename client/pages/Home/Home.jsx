@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 import styles from './Home.module.scss'
@@ -8,39 +7,33 @@ export default function Home() {
     <div className={styles.home}>
       <div className={styles.imageContainer}>
         <div className={styles.imageWrapper}>
-          <a href='/secretsanta'>
+          <Link to='/secretsanta' className={styles.links}>
             <img
-              src='../../server/public/assets/Secret-Santa-.png'
+              // src='../../server/public/assets/Secret-Santa-.png'
+              src='/client/public/assets/Secret-Santa-.png'
               alt='secret santa'
               className={styles.image}
             />
-          </a>
-
-          <Link to='/secretsanta' className={styles.links}>
             secret santa
           </Link>
         </div>
         <div className={styles.imageWrapper}>
-          <a href='/removedfeature'>
+          <Link to='/removedfeature' className={styles.links}>
             <img
-              src='../../server/public/assets/Only-Peets-.png'
+              src='/client/public/assets/Only-Peets-.png'
               alt='Santa with Animals'
               className={styles.image}
             />
-          </a>
-          <Link to='/removedfeature' className={styles.links}>
             onlypeets
           </Link>
         </div>
         <div className={styles.imageWrapper}>
-          <a href='/removedfeature'>
+          <Link to='/removedfeature' className={styles.links}>
             <img
-              src='../../server/public/assets/Drunk-Santa-.png'
+              src='/client/public/assets/Drunk-Santa-.png'
               alt='Drunk Santa'
               className={styles.image}
             />
-          </a>
-          <Link to='/removedfeature' className={styles.links}>
             drunk santa
           </Link>
         </div>

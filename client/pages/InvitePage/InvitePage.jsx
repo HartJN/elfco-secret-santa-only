@@ -59,7 +59,7 @@ export default function InvitePage() {
         handleSubmit={handleSubmit}
       />
       <img
-        src='/server/public/assets/Secret-Santa-.png'
+        src='/client/public/assets/Secret-Santa-.png'
         alt='santa hushing'
         className={styles.santaCopyLinkImg}
       />
