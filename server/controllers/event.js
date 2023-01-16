@@ -10,7 +10,10 @@ import {
 
 export default {
   getEvents: async (req, res) => {
-    const events = await getEvents()
+    const host_id = req.user?.sub
+
+    const events = await getEvents(host_id)
+
     res.json(events)
   },
   getEvent: async (req, res) => {
@@ -23,6 +26,8 @@ export default {
   createEvent: async (req, res) => {
     try {
       const eventData = req.body
+
+      eventData.host_id = req.user?.sub
 
       eventData.invite_id = uuidv4()
 
@@ -38,6 +43,7 @@ export default {
 
   finaliseEvent: async (req, res) => {
     const { event_id } = req.params
+    console.log('🚀 ~ file: event.js:46 ~ finaliseEvent: ~ event_id', event_id)
 
     const event = await finaliseEvent(event_id)
 

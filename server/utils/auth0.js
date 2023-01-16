@@ -1,8 +1,8 @@
 import jwt from 'express-jwt'
 import jwks from 'jwks-rsa'
 
-const domain = 'https://aihe-ahoaho-2022-razel.au.auth0.com'
-const audience = 'https://ambatsador/api'
+const domain = 'https://aihe-2022-jamesh.au.auth0.com'
+const audience = 'https://secret-santa/api'
 
 export const checkJwt = jwt({
   secret: jwks.expressJwtSecret({

@@ -16,8 +16,8 @@ export function createEvent(event, db = connection) {
   })
 }
 
-export function getEvents(db = connection) {
-  return db('event').select()
+export function getEvents(host_id, db = connection) {
+  return db('event').select().where({ host_id })
 }
 
 export function getEventByInviteId(invite_id, db = connection) {

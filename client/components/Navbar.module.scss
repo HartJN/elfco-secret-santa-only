@@ -54,6 +54,22 @@
     background-color: theme.$lighterMainGreen;
   }
 }
+.auth {
+  padding: 1rem 3rem 1rem 3rem;
+  background-color: transparent;
+  border-color: theme.$headerTertiary;
+  border-width: 4px;
+  border-radius: 10px;
+  border-style: solid;
+  color: theme.$text-black;
+  font-family: theme.$heading-font-family;
+  font-size: 18px;
+  text-align: center;
+
+  &:hover {
+    background-color: theme.$lighterMainGreen;
+  }
+}
 
 .login {
   padding: 1rem 3rem 1rem 3rem;

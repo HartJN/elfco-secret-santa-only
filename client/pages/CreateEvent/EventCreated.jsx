@@ -17,7 +17,7 @@ export default function EventCreated({ name, date, link, copyLink }) {
       <div className={styles.copyLinkContainer}>
         <p>Copy and Paste this link to your friends</p>
         <img
-          src='/server/public/assets/Secret-Santa-.png'
+          src='/client/public/assets/Secret-Santa-.png'
           alt='santa hushing'
           className={styles.santaCopyLinkImg}
         />
@@ -26,7 +26,7 @@ export default function EventCreated({ name, date, link, copyLink }) {
         </button>
       </div>
       <img
-        src='/server/public/assets/rudolph-v2.png'
+        src='/client/public/assets/rudolph-v2.png'
         alt='santa hushing'
         className={styles.rudolphImg}
       />
