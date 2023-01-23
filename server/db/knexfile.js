@@ -1,34 +1,45 @@
-const path = require('path')
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+const defaults = {
+  useNullAsDefault: true,
+  migrations: {
+    directory: path.resolve(__dirname, 'migrations'),
+    loadExtensions: ['.mjs'],
+  },
+  seeds: {
+    directory: path.resolve(__dirname, 'seeds'),
+    loadExtensions: ['.mjs'],
+  },
+}
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
-module.exports = {
+export default {
   development: {
+    ...defaults,
     client: 'sqlite3',
     connection: {
-      filename: path.join(__dirname, './dev.sqlite3'),
+      filename: path.resolve(__dirname, 'dev.sqlite3'),
     },
-    useNullAsDefault: true,
   },
-
-  staging: {
-    client: 'postgresql',
+  test: {
+    ...defaults,
+    client: 'sqlite3',
     connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password',
+      filename: ':memory:',
     },
-    pool: {
-      min: 2,
-      max: 10,
-    },
-    migrations: {
-      tableName: 'migrations',
+    seeds: {
+      ...defaults.seeds,
+      directory: path.resolve(__dirname, 'test-seeds'),
     },
   },
 
   production: {
+    ...defaults,
     client: 'postgresql',
     connection: {
       database: 'my_db',
@@ -38,9 +49,6 @@ module.exports = {
     pool: {
       min: 2,
       max: 10,
-    },
-    migrations: {
-      tableName: 'migrations',
     },
   },
 }
