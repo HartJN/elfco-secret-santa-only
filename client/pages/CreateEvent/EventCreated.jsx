@@ -10,14 +10,14 @@ export default function EventCreated({ name, date, link, copyLink }) {
       <h3>{name}</h3>
       <div className={styles.linkContainer}>
         <p>Your Event Link:</p>
-        <a href={`http://localhost:5173/invite/${link}`}>
+        <a href={`https://elfco-secret-santa.herokuapp.com/invite/${link}`}>
           http://elf.co/invite/{link}
         </a>
       </div>
       <div className={styles.copyLinkContainer}>
         <p>Copy and Paste this link to your friends</p>
         <img
-          src='/client/public/assets/Secret-Santa-.png'
+          src='/assets/Secret-Santa-.png'
           alt='santa hushing'
           className={styles.santaCopyLinkImg}
         />
@@ -26,7 +26,7 @@ export default function EventCreated({ name, date, link, copyLink }) {
         </button>
       </div>
       <img
-        src='/client/public/assets/rudolph-v2.png'
+        src='/assets/rudolph-v2.png'
         alt='santa hushing'
         className={styles.rudolphImg}
       />

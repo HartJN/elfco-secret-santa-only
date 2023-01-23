@@ -36,7 +36,9 @@ export default function Event() {
   }
 
   const copyLink = () => {
-    navigator.clipboard.writeText(`localhost:5173/invite/${link}`)
+    navigator.clipboard.writeText(
+      `https://elfco-secret-santa.herokuapp.com/invite/${link}`
+    )
   }
 
   return (

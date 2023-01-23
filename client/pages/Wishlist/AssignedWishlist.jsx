@@ -15,7 +15,7 @@ export default function AssignedWishlist({ event, assignedWishlist, id }) {
         <div className={styles.assignedName}>
           {assignedWishlist?.name}
           <img
-            src='/client/public/assets/candyCane.png'
+            src='/assets/candyCane.png'
             className={styles.candyCaneImg}
             alt='candy cane'
             draggable='false'
@@ -29,7 +29,7 @@ export default function AssignedWishlist({ event, assignedWishlist, id }) {
             the budget is ${event[0].budget}{' '}
           </p>
           <img
-            src='/client/public/assets/tree.PNG'
+            src='/assets/tree.PNG'
             alt='cartoon drawing of christmas tree person'
             className={styles.treeImAssigned}
             draggable='false'

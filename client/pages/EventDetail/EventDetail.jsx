@@ -78,7 +78,7 @@ export default function EventDetail() {
         />
       )}
       <img
-        src='/client/public/assets/tree.PNG'
+        src='/assets/tree.PNG'
         alt='a cartoon of a person dressed as a christmas tree'
         draggable='false'
         className={styles.treeImg}

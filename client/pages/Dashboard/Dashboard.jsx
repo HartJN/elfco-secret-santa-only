@@ -51,7 +51,7 @@ export default function Dashboard() {
               </Link>
 
               <img
-                src='/client/public/assets/tree.PNG'
+                src='/assets/tree.PNG'
                 alt='christmas tree'
                 width='40'
                 className={styles.treeImage}

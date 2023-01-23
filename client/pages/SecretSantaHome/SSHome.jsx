@@ -32,7 +32,7 @@ export default function SSHome() {
         <h2>Login to get started!</h2>
         <a href='/event' onClick={handleSignIn}>
           <img
-            src='/client/public/assets/Secret-Santa-.png'
+            src='/assets/Secret-Santa-.png'
             alt='secret santa'
             className={styles.image}
           />
