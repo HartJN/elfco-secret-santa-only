@@ -23,7 +23,7 @@ export default {
     ...defaults,
     client: 'sqlite3',
     connection: {
-      filename: 'prod.sqlite3',
+      filename: path.resolve(__dirname, 'prod.sqlite3'),
     },
     useNullAsDefault: true,
   },
@@ -43,7 +43,7 @@ export default {
     ...defaults,
     client: 'sqlite3',
     connection: {
-      filename: 'prod.sqlite3',
+      filename: path.resolve(__dirname, 'prod.sqlite3'),
     },
     useNullAsDefault: true,
   },
