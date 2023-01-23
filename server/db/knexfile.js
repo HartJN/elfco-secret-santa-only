@@ -23,8 +23,9 @@ export default {
     ...defaults,
     client: 'sqlite3',
     connection: {
-      filename: path.resolve(__dirname, 'dev.sqlite3'),
+      filename: 'dev.sqlite3',
     },
+    useNullAsDefault: true,
   },
   test: {
     ...defaults,
@@ -40,13 +41,10 @@ export default {
 
   production: {
     ...defaults,
-    client: 'postgresql',
+    client: 'sqlite3',
     connection: {
-      DATABASE_URL: process.env.DATABASE_URL,
+      filename: 'dev.sqlite3',
     },
-    pool: {
-      min: 2,
-      max: 10,
-    },
+    useNullAsDefault: true,
   },
 }
