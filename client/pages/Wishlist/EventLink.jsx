@@ -12,7 +12,7 @@ export default function EventLink({ id }) {
       <div className={styles.linkContainer}>
         <p>Your Event Link:</p>
         <a href={`https://elfco-secret-santa.herokuapp.com/wishlist/${id}`}>
-          http://elf.co/wishlist/{id}
+          https://elfco-secret-santa.herokuapp.com/wishlist/${id}
         </a>
         <div className={styles.copyLinkContainer}>
           <p>Save this link to come back to your wishlist</p>
