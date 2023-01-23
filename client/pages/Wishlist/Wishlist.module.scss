@@ -161,7 +161,7 @@
   .treeImg {
     position: absolute;
     bottom: -5rem;
-    left: -18rem;
+    left: -20rem;
     width: auto;
     height: 25rem;
     z-index: 2;
@@ -204,7 +204,7 @@
     font-size: 2.8rem;
     font-weight: 400;
     color: $text-white;
-    margin-top: 3.2rem;
+    // margin-top: 3.2rem;
     text-align: left;
     border-radius: 20px;
     padding: 2rem;
@@ -218,8 +218,8 @@
     }
     .treeImAssigned {
       position: absolute;
-      bottom: 3rem;
-      right: -5rem;
+      bottom: -2rem;
+      left: -16rem;
       width: auto;
       height: 15rem;
       transform: rotate(3deg);
@@ -234,10 +234,13 @@
     border-radius: 1rem;
     color: $white;
     padding: 2rem;
-    height: 4rem;
+    height: 5rem;
     position: absolute;
-    bottom: 7rem;
-    right: 12rem;
+    bottom: 5rem;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 65rem;
 
     p {
       text-align: center;
@@ -248,7 +251,7 @@
     }
     a {
       color: $white;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 900;
       text-decoration: none;
       text-align: center;
@@ -267,8 +270,8 @@
     background-color: $bodyRed;
     position: relative;
     border-radius: 15px;
-    bottom: 4.5rem;
-    right: -57rem;
+    bottom: 6rem;
+    right: -62rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;

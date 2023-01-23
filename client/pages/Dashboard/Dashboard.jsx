@@ -10,7 +10,6 @@ export default function Dashboard() {
   const { isAuthenticated } = useAuth0()
   const navigate = useNavigate()
   const [events, setEvents] = useState([])
-  const [showMessage, setShowMessage] = useState(false)
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -24,14 +23,11 @@ export default function Dashboard() {
       const events = await getEvents(token)
       setEvents(events)
     }
-    fetchEvents()
-  }, [])
 
-  setTimeout(() => {
-    if (events.length === 0) {
-      setShowMessage(true)
+    if (isAuthenticated) {
+      fetchEvents()
     }
-  }, 1000)
+  }, [isAuthenticated])
 
   return (
     <div className={styles.dashboard}>
@@ -39,16 +35,6 @@ export default function Dashboard() {
       <hr />
       <h2>Your events</h2>
       <div className={styles.events}>
-        {showMessage && (
-          <>
-            <div className={styles.event}>
-              <h2 className={styles.title}>You don't have any events.</h2>
-              <Link className={styles.link} to='/event'>
-                Create Event
-              </Link>
-            </div>
-          </>
-        )}
         {events.map((event) => (
           <div className={styles.event} key={event.id}>
             <a href={`/dashboard/${event.invite_id}`}>
