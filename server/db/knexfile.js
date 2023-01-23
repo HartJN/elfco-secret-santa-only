@@ -42,9 +42,7 @@ export default {
     ...defaults,
     client: 'postgresql',
     connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password',
+      DATABASE_URL: process.env.DATABASE_URL,
     },
     pool: {
       min: 2,
