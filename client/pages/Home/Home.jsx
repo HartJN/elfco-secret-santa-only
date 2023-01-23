@@ -9,8 +9,7 @@ export default function Home() {
         <div className={styles.imageWrapper}>
           <Link to='/secretsanta' className={styles.links}>
             <img
-              // src='../../server/public/assets/Secret-Santa-.png'
-              src='/client/public/assets/Secret-Santa-.png'
+              src='/assets/Secret-Santa-.png'
               alt='secret santa'
               className={styles.image}
             />
@@ -20,7 +19,7 @@ export default function Home() {
         <div className={styles.imageWrapper}>
           <Link to='/removedfeature' className={styles.links}>
             <img
-              src='/client/public/assets/Only-Peets-.png'
+              src='/assets/Only-Peets-.png'
               alt='Santa with Animals'
               className={styles.image}
             />
@@ -30,7 +29,7 @@ export default function Home() {
         <div className={styles.imageWrapper}>
           <Link to='/removedfeature' className={styles.links}>
             <img
-              src='/client/public/assets/Drunk-Santa-.png'
+              src='/assets/Drunk-Santa-.png'
               alt='Drunk Santa'
               className={styles.image}
             />
