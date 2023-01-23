@@ -10,6 +10,13 @@ import Dashboard from '../Dashboard/Dashboard'
 
 vi.mock('../../apiClient/event.js')
 
+vi.mock('@auth0/auth0-react', () => ({
+  useAuth0: () => ({
+    isAuthenticated: true,
+    getAccessTokenSilently: () => 'fake token',
+  }),
+}))
+
 const mockEventsData = [
   {
     id: 1,

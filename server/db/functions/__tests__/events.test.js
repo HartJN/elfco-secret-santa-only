@@ -29,7 +29,8 @@ describe('createEvent', () => {
 
 describe('getEvents', () => {
   test('gets the events from db', () => {
-    return getEvents(testDb).then((events) => {
+    const host_id = 1
+    return getEvents(host_id, testDb).then((events) => {
       expect(events).toHaveLength(3)
     })
   })

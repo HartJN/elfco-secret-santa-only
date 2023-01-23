@@ -12,6 +12,13 @@ import CreateEvent from '../CreateEvent/CreateEvent'
 
 vi.mock('../../apiClient/event.js')
 
+vi.mock('@auth0/auth0-react', () => ({
+  useAuth0: () => ({
+    isAuthenticated: true,
+    getAccessTokenSilently: () => 'fake token',
+  }),
+}))
+
 describe('CreateEvent component test', () => {
   it('renders', () => {
     render(<CreateEvent />, { wrapper: MemoryRouter })
