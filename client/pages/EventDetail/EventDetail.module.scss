@@ -316,8 +316,10 @@
 
 @media (max-width: 35em) {
   .guestContainer {
-    min-height: 90rem;
     width: auto;
+    height: 100%;
+    min-height: 90rem;
+    margin: 9rem 0;
 
     .unsortedGuests {
       .participantListItem {
@@ -351,7 +353,7 @@
         .guestWrapper {
           width: 15rem;
           margin: 0;
-          height: 1.5rem;
+          height: 2.5rem;
         }
       }
     }
@@ -375,8 +377,31 @@
     }
 
     .sortedGuests {
-      .sortedGuestsGrid {
+      grid-template-columns: auto;
+      max-width: 45rem;
+      height: 100%;
+
+      .assignedGuestWrapper {
+        height: 6rem;
+
+        .arrowThing {
+          font-size: 6rem;
+        }
+
+        p {
+          font-size: 3.2rem;
+        }
+
+        button {
+          font-size: 2.2rem;
+          width: 10rem;
+          padding: 1rem;
+        }
       }
+    }
+    .sortedGuestsGrid {
+      grid-template-columns: auto;
+      height: 100%;
     }
   }
 }

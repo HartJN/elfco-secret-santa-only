@@ -45,7 +45,7 @@ export default function Dashboard() {
               Event Date: {event.date} | Guest{' '}
               {event.status === 0 ? 'Submissions Open' : 'Submissions Closed'}
             </p>
-            <div>
+            <div className={styles.btnContainer}>
               <Link
                 className={styles.link}
                 to={`/dashboard/${event.invite_id}`}
