@@ -1,12 +1,11 @@
 @import './styles/theme';
 
 .app {
-  height: 100vh;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
+  height: 100vh;
 
   .headerApp {
   }
@@ -14,12 +13,9 @@
   .mainApp {
     max-width: 130rem;
     margin: 0 auto;
-
-    display: flex;
-    flex-direction: column;
-    place-content: center;
   }
 
   .footerApp {
+    width: 100%;
   }
 }

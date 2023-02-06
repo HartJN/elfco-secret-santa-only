@@ -39,6 +39,13 @@
   letter-spacing: 0.1ch;
 }
 
+.signup,
+.auth,
+.login {
+  display: flex;
+  place-items: center;
+}
+
 .signup {
   padding: 10px 30px 10px 30px;
 
@@ -92,4 +99,134 @@
 }
 .signup:hover {
   background-color: theme.$lighterMainGreen;
+}
+
+@media (min-width: 240px) and (max-width: 320px) {
+  .navbar {
+    padding: 1rem;
+    font-size: 1em;
+  }
+  .title {
+    font-size: 3.2em;
+  }
+  .links {
+    gap: 2rem;
+    margin-left: 2rem;
+    font-size: 1em;
+  }
+  .signup,
+  .auth,
+  .login {
+    padding: 0.4rem, 1.2rem, 0.4rem, 1.2rem;
+  }
+  .signup {
+    font-size: 12px;
+  }
+  .auth {
+    font-size: 10px;
+  }
+  .login {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+  .navbar {
+    padding: 1rem;
+    font-size: 1em;
+  }
+  .title {
+    font-size: 3.2em;
+  }
+  .links {
+    gap: 2rem;
+    margin-left: 2rem;
+    font-size: 1em;
+  }
+  .signup,
+  .auth,
+  .login {
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  }
+  .signup {
+    font-size: 12px;
+  }
+  .auth {
+    font-size: 10px;
+  }
+  .login {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem;
+    font-size: 1.2em;
+  }
+  .title {
+    font-size: 2.6em;
+  }
+  .links {
+    gap: 3rem;
+    margin-left: 3rem;
+    font-size: 1.2em;
+  }
+  .signup {
+    font-size: 16px;
+  }
+  .auth {
+    font-size: 14px;
+  }
+  .login {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 2rem;
+    font-size: 1.4em;
+  }
+  .title {
+    font-size: 3em;
+  }
+  .links {
+    gap: 4rem;
+    margin-left: 4rem;
+    font-size: 1.4em;
+  }
+  .signup {
+    font-size: 18px;
+  }
+  .auth {
+    font-size: 16px;
+  }
+  .login {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .navbar {
+    // padding: 2rem;
+    // font-size: 1.6em;
+  }
+  .title {
+    // font-size: 3.4em;
+  }
+  .links {
+    // gap: 4.8rem;
+    // margin-left: 4.8rem;
+    // font-size: 1.6em;
+  }
+  .signup {
+    // font-size: 20px;
+  }
+  .auth {
+    // font-size: 18px;
+  }
+  .login {
+    // font-size: 20px;
+  }
 }

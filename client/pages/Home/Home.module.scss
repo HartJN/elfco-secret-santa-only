@@ -4,8 +4,8 @@
   display: flex;
 
   flex-direction: column;
-  align-items: flex-start;
-  place-content: center;
+  // align-items: center;
+  // place-content: center;
   height: 100%;
   max-width: 150rem;
   padding: 1rem;
@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: row;
   place-items: center;
+  height: 100vh;
 }
 
 .imageWrapper {
