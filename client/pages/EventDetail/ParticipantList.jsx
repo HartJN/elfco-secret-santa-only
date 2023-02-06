@@ -17,7 +17,7 @@ export default function ParticipantList({
       >
         {guestList?.map((participant) => {
           return (
-            <div key={participant.id}>
+            <div key={participant.id} className={styles.participantListItem}>
               <div className={styles.guestWrapper}>
                 <p>{trim(participant.name)}</p>
 
