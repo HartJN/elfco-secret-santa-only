@@ -270,7 +270,7 @@
 
 @media (max-width: 59em) {
   .eventContainer {
-    background-color: red;
+    // background-color: red;
     width: 70rem;
   }
 }
@@ -278,7 +278,7 @@
 @media (max-width: 44em) {
   .eventContainer {
     margin-top: 0;
-    background-color: rgba(0, 0, 255, 0.13);
+    // background-color: rgba(0, 0, 255, 0.13);
     width: 70rem;
 
     .createEventContainer {
@@ -291,7 +291,7 @@
 
 @media (max-width: 35em) {
   .eventContainer {
-    background-color: pink;
+    // background-color: pink;
     width: 45rem;
     height: 80rem;
     place-content: flex-start;

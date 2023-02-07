@@ -126,7 +126,6 @@
 
 @media (max-width: 59em) {
   .dashboard {
-    background-color: red;
     width: 85rem;
     .events {
       min-width: fit-content;
@@ -151,7 +150,7 @@
 @media (max-width: 44em) {
   .dashboard {
     // margin-top: 0;
-    background-color: rgba(0, 0, 255, 0.13);
+
     width: 75rem;
 
     margin: 0 auto;
@@ -178,7 +177,6 @@
 
 @media (max-width: 35em) {
   .dashboard {
-    background-color: pink;
     width: 55rem;
     height: auto;
 

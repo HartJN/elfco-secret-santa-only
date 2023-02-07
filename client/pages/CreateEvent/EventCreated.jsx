@@ -11,7 +11,7 @@ export default function EventCreated({ name, date, link, copyLink }) {
       <div className={styles.linkContainer}>
         <p>Your Event Link:</p>
         <a href={`https://elfco-secret-santa.herokuapp.com/invite/${link}`}>
-          https://elfco-secret-santa.herokuapp.com/wishlist/${link}
+          https://elfco-secret-santa.herokuapp.com/wishlist/{link}
         </a>
       </div>
       <div className={styles.copyLinkContainer}>

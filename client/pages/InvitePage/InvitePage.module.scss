@@ -235,14 +235,12 @@
 
 @media (max-width: 59em) {
   .inviteContainer {
-    background-color: red;
     width: 65rem;
   }
 }
 
 @media (max-width: 44em) {
   .inviteContainer {
-    background-color: rgba(0, 0, 255, 0.13);
     width: 55rem;
     min-height: 70rem;
   }
@@ -255,8 +253,6 @@
     height: 80rem;
     justify-content: flex-start;
     gap: 5rem;
-
-    background-color: pink;
 
     h2 {
       font-size: 3.8rem;
