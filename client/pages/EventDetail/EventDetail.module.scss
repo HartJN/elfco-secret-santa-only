@@ -13,7 +13,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   box-shadow: $shadow;
-  height: 60rem;
+  height: auto;
   margin-top: 9.6rem;
 
   position: relative;
@@ -315,8 +315,36 @@
   }
 }
 
+@media (max-width: 59em) {
+  .guestContainer {
+    background-color: red;
+    width: auto;
+    height: auto;
+
+    .treeImg {
+      height: 27rem;
+      left: 0rem;
+      top: 0rem;
+    }
+  }
+}
+
+@media (max-width: 44em) {
+  .guestContainer {
+    background-color: rgba(0, 0, 255, 0.13);
+
+    .treeImg {
+      height: 25rem;
+
+      left: 0rem;
+      top: 0rem;
+    }
+  }
+}
+
 @media (max-width: 35em) {
   .guestContainer {
+    background-color: pink;
     width: auto;
     height: auto;
     min-height: 90rem;
@@ -360,10 +388,11 @@
     }
     .treeImg {
       height: 20rem;
-      width: auto;
+
       // position: absolute;
-      left: 0;
-      bottom: 0rem;
+
+      left: -1rem;
+      top: 12rem;
     }
 
     .drawBtn {
