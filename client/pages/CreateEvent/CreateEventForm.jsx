@@ -46,7 +46,7 @@ export default function CreateEventForm({
         <button type='submit'>Create Your Event</button>
       </form>
       <img
-        src='/server/public/assets/santa-small.PNG'
+        src='/assets/santa-small.PNG'
         alt='cartoon of santa'
         className={styles.santaImg}
       />

@@ -20,6 +20,7 @@ body {
 }
 
 #root {
+  overflow-x: hidden;
 }
 
 p {
@@ -32,17 +33,17 @@ a {
   cursor: pointer;
 }
 
-@media (max-width: 84em) {
-  html {
-    font-size: 60%;
-  }
-}
+// @media (max-width: 84em) {
+//   html {
+//     font-size: 60%;
+//   }
+// }
 
-@media (max-width: 75em) {
-  html {
-    font-size: 56.25%;
-  }
-}
+// @media (max-width: 75em) {
+//   html {
+//     font-size: 56.25%;
+//   }
+// }
 
 @media (max-width: 59em) {
   html {

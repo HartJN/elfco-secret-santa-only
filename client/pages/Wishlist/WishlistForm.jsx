@@ -31,7 +31,7 @@ export default function WishlistForm({
             <button type='submit'>Submit</button>
           </form>
           <img
-            src='/server/public/assets/xmas-cat.PNG'
+            src='/assets/xmas-cat.PNG'
             alt='cat'
             className={styles.catImg}
             draggable='false'
@@ -58,7 +58,7 @@ export default function WishlistForm({
             <p className={styles.days}> {handleDate(event[0].date)}</p>
 
             <img
-              src='/server/public/assets/tree.PNG'
+              src='/assets/tree.PNG'
               alt='tree'
               className={styles.treeImg}
               draggable='false'

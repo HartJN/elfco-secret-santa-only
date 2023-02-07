@@ -2,20 +2,22 @@ import styles from './Wishlist.module.scss'
 
 export default function EventLink({ id }) {
   const copyLink = () => {
-    navigator.clipboard.writeText(`localhost:5173/wishlist/${id}`)
+    navigator.clipboard.writeText(
+      `https://elfco-secret-santa.herokuapp.com/wishlist/${id}`
+    )
   }
 
   return (
     <div className={styles.eventLinkContainer}>
       <div className={styles.linkContainer}>
         <p>Your Event Link:</p>
-        <a href={`http://localhost:5173/wishlist/${id}`}>
-          http://elf.co/wishlist/{id}
+        <a href={`https://elfco-secret-santa.herokuapp.com/wishlist/${id}`}>
+          https://elfco-secret-santa.herokuapp.com/wishlist/${id}
         </a>
         <div className={styles.copyLinkContainer}>
           <p>Save this link to come back to your wishlist</p>
           <img
-            src='/server/public/assets/Secret-Santa-.png'
+            src='/assets/Secret-Santa-.png'
             alt='santa hushing'
             className={styles.santaCopyLinkImg}
           />

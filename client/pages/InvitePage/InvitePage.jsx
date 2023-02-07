@@ -18,6 +18,7 @@ export default function InvitePage() {
     const getEvent = async () => {
       try {
         const event = await getEventByInviteCode(invite_id)
+        console.log('🚀 ~ file: InvitePage.jsx:21 ~ getEvent ~ event', event)
         setNewEvent(event)
       } catch (err) {
         console.error(err.message)
@@ -43,6 +44,16 @@ export default function InvitePage() {
       console.error(err.message)
     }
   }
+  console.log(event.status)
+
+  if (event.status === 1) {
+    return (
+      <div className={styles.inviteContainer}>
+        <h1 className={styles.header}>Secret Santa</h1>
+        <h2>Sorry, this event is closed.</h2>
+      </div>
+    )
+  }
 
   return (
     <div className={styles.inviteContainer}>
@@ -59,7 +70,7 @@ export default function InvitePage() {
         handleSubmit={handleSubmit}
       />
       <img
-        src='/server/public/assets/Secret-Santa-.png'
+        src='/assets/Secret-Santa-.png'
         alt='santa hushing'
         className={styles.santaCopyLinkImg}
       />

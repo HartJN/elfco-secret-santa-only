@@ -23,8 +23,9 @@ export default {
     ...defaults,
     client: 'sqlite3',
     connection: {
-      filename: path.resolve(__dirname, 'dev.sqlite3'),
+      filename: path.resolve(__dirname, 'prod.sqlite3'),
     },
+    useNullAsDefault: true,
   },
   test: {
     ...defaults,
@@ -37,11 +38,12 @@ export default {
       directory: path.resolve(__dirname, 'test-seeds'),
     },
   },
+
   production: {
     ...defaults,
     client: 'sqlite3',
     connection: {
-      filename: '/app/storage/prod.sqlite3',
+      filename: path.resolve(__dirname, 'prod.sqlite3'),
     },
     useNullAsDefault: true,
   },

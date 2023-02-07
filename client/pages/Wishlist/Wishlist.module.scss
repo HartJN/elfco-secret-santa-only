@@ -8,7 +8,7 @@
   background-color: $white;
   padding: 5rem;
 
-  width: 80rem;
+  width: 100rem;
   margin: 0 auto;
 
   position: relative;
@@ -16,7 +16,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   box-shadow: $shadow;
-  min-height: 50rem;
+  min-height: 70rem;
 
   .header {
     color: $bodyRed;
@@ -161,7 +161,7 @@
   .treeImg {
     position: absolute;
     bottom: -5rem;
-    left: -18rem;
+    left: -20rem;
     width: auto;
     height: 25rem;
     z-index: 2;
@@ -204,22 +204,22 @@
     font-size: 2.8rem;
     font-weight: 400;
     color: $text-white;
-    margin-top: 3.2rem;
+    // margin-top: 3.2rem;
     text-align: left;
     border-radius: 20px;
     padding: 2rem;
     max-width: 50rem;
 
     p {
-      margin: 0 auto;
+      // margin: 0 auto;
       text-align: left;
 
       color: $text-white;
     }
     .treeImAssigned {
       position: absolute;
-      bottom: 3rem;
-      right: -5rem;
+      bottom: -2rem;
+      left: -16rem;
       width: auto;
       height: 15rem;
       transform: rotate(3deg);
@@ -234,10 +234,13 @@
     border-radius: 1rem;
     color: $white;
     padding: 2rem;
-    height: 4rem;
+    height: 5rem;
     position: absolute;
-    bottom: 7rem;
-    right: 12rem;
+    bottom: 5rem;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 65rem;
 
     p {
       text-align: center;
@@ -248,7 +251,7 @@
     }
     a {
       color: $white;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: 900;
       text-decoration: none;
       text-align: center;
@@ -267,8 +270,8 @@
     background-color: $bodyRed;
     position: relative;
     border-radius: 15px;
-    bottom: 4.5rem;
-    right: -57rem;
+    bottom: 6rem;
+    right: -62rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -361,5 +364,215 @@
     top: 19rem;
     left: -5rem;
     transform: rotate(-10deg);
+  }
+}
+
+@media (max-width: 59em) {
+  .eventContainer {
+    width: 75rem;
+    height: 70rem;
+
+    .createEventContainer {
+      p {
+        font-size: 3rem;
+      }
+
+      .assignedName {
+        font-size: 4.2rem;
+      }
+      .catImg {
+        width: 25rem;
+        height: auto;
+        left: -15rem;
+        bottom: -25rem;
+      }
+      .treeImg {
+        width: 20rem;
+        height: auto;
+        left: -15rem;
+        bottom: -20rem;
+      }
+    }
+    .linkContainer {
+      display: none;
+    }
+
+    .assignedWishlist {
+      min-height: 20rem;
+
+      .treeImAssigned {
+        width: 20rem;
+        height: auto;
+        left: -20rem;
+        bottom: -20rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 44em) {
+  .eventContainer {
+    width: 65rem;
+    height: 70rem;
+
+    .createEventContainer {
+      .catImg {
+        width: 25rem;
+        height: auto;
+        left: -15rem;
+        bottom: -25rem;
+      }
+      .treeImg {
+        width: 20rem;
+        height: auto;
+        left: -15rem;
+        bottom: -20rem;
+      }
+    }
+    .linkContainer {
+      display: none;
+    }
+
+    .assignedWishlist {
+      min-height: 20rem;
+
+      .treeImAssigned {
+        width: 20rem;
+        height: auto;
+        left: -15rem;
+        bottom: -20rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 35em) {
+  .eventContainer {
+    padding: 5rem;
+    width: 45rem;
+    height: 80rem;
+    justify-content: flex-start;
+    // gap: 4rem;
+
+    .header {
+      font-size: 5.8rem;
+    }
+
+    .eventImg {
+      width: 100%;
+      height: auto;
+    }
+    .eventInfo {
+      width: 100%;
+      padding: 0rem 2rem;
+      .eventTitle {
+        font-size: 3.8rem;
+      }
+      .eventDate {
+        font-size: 2.2rem;
+      }
+      .eventDescription {
+        font-size: 1.8rem;
+      }
+      .eventLink {
+        font-size: 1.8rem;
+      }
+    }
+
+    .createEventContainer {
+      height: 100%;
+
+      justify-content: space-between;
+
+      p {
+        font-size: 4.2rem;
+      }
+
+      .eventForm {
+        height: fit-content;
+
+        textarea {
+          font-size: 3.2rem;
+
+          &::placeholder {
+            font-size: 3.2rem;
+          }
+        }
+
+        button {
+          font-size: 3.2rem;
+          width: 30rem;
+          height: 5rem;
+        }
+      }
+
+      .catImg {
+        width: 20rem;
+        height: auto;
+        left: -15rem;
+        bottom: -15rem;
+      }
+
+      .secondaryHeading {
+        font-size: 4.2rem;
+      }
+
+      .assignedName {
+        font-size: 4.2rem;
+        width: 10rem;
+        text-align: center;
+
+        .candyCaneImg {
+          width: 7rem;
+          height: auto;
+
+          top: -2rem;
+          right: -1.5rem;
+        }
+      }
+
+      .wishlistItem {
+        font-size: 5.2rem;
+      }
+
+      .editBtn {
+        font-size: 3.2rem;
+        width: 100%;
+        height: 5rem;
+      }
+
+      .treeImg {
+        width: 15rem;
+        height: auto;
+        bottom: -9rem;
+        left: -8rem;
+      }
+    }
+
+    .linkContainer {
+      display: none;
+
+      p {
+        font-size: 2.2rem;
+      }
+
+      a {
+        font-size: 2.2rem;
+      }
+    }
+
+    .assignedWishlist {
+      p {
+        padding: 1rem;
+        font-size: 3.2rem;
+      }
+
+      .treeImAssigned {
+        width: 18rem;
+        height: auto;
+        bottom: -12rem;
+        left: -9rem;
+      }
+    }
   }
 }

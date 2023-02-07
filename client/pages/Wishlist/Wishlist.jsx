@@ -48,7 +48,7 @@ export default function Wishlist() {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
 
     if (diffDays <= 1) {
-      return `You have ${diffDays} day left! you better of bought it already!`
+      return `You have ${diffDays} day left!`
     } else if (diffDays < 14) {
       return `You have ${diffDays} days left`
     } else {

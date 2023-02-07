@@ -4,8 +4,8 @@
   display: flex;
 
   flex-direction: column;
-  align-items: flex-start;
-  place-content: center;
+  // align-items: center;
+  // place-content: center;
   height: 100%;
   max-width: 150rem;
   padding: 1rem;
@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: row;
   place-items: center;
+  height: 100vh;
 }
 
 .imageWrapper {
@@ -80,4 +81,99 @@
 .homepageButtons:hover a {
   background-color: #d08c54;
   color: rgb(255, 255, 255);
+}
+
+@media (max-width: 84em) {
+  .home {
+    max-width: 130rem;
+  }
+
+  .image {
+    min-width: 100%;
+  }
+
+  .homepageButtons {
+    font-size: 2.4rem;
+  }
+
+  .links {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 75em) {
+  .home {
+    max-width: 110rem;
+  }
+
+  .image {
+    min-width: 100%;
+  }
+
+  .homepageButtons {
+    font-size: 2.2rem;
+  }
+
+  .links {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .home {
+    // max-width: 90rem;
+  }
+
+  .image {
+    min-width: 100%;
+  }
+
+  .homepageButtons {
+    font-size: 2rem;
+  }
+
+  .links {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 44em) {
+  .home {
+    // max-width: 80rem;
+  }
+
+  .image {
+    min-width: 100%;
+  }
+
+  .homepageButtons {
+    font-size: 1.8rem;
+  }
+
+  .links {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 34em) {
+  .home {
+    // max-width: 50rem;
+  }
+
+  .image {
+    max-width: 30rem;
+  }
+
+  .imageContainer {
+    padding: 9.6rem;
+    flex-direction: column;
+  }
+
+  .homepageButtons {
+    font-size: 1.6rem;
+  }
+
+  .links {
+    font-size: 3.6rem;
+  }
 }

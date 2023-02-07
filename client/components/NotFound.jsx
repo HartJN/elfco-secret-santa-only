@@ -5,7 +5,7 @@ export default function EventNotFound() {
     <div className={styles.eventNotFoundContainer}>
       <h2>Event not found</h2>
       <img
-        src='/server/public/assets/sad-cat.PNG'
+        src='/assets/sad-cat.PNG'
         alt='sad cat'
         className={styles.sadCatImg}
         draggable='false'

@@ -1,25 +1,33 @@
+import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { getEvents } from '../../apiClient/event.js'
 import styles from './Dashboard.module.scss'
 
 export default function Dashboard() {
+  const { getAccessTokenSilently } = useAuth0()
+  const { isAuthenticated } = useAuth0()
+  const navigate = useNavigate()
   const [events, setEvents] = useState([])
 
   useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/')
+    }
+  }, [isAuthenticated])
+
+  useEffect(() => {
     const fetchEvents = async () => {
-      const events = await getEvents()
+      const token = await getAccessTokenSilently()
+      const events = await getEvents(token)
       setEvents(events)
     }
-    fetchEvents()
-  }, [])
 
-  const MOCK_AUTHID = 69
-
-  const filterEvents = (events) => {
-    return events.filter((event) => event.host_id === MOCK_AUTHID)
-  }
+    if (isAuthenticated) {
+      fetchEvents()
+    }
+  }, [isAuthenticated])
 
   return (
     <div className={styles.dashboard}>
@@ -27,7 +35,7 @@ export default function Dashboard() {
       <hr />
       <h2>Your events</h2>
       <div className={styles.events}>
-        {filterEvents(events).map((event) => (
+        {events.map((event) => (
           <div className={styles.event} key={event.id}>
             <a href={`/dashboard/${event.invite_id}`}>
               <h2 className={styles.title}>{event.event_name}</h2>
@@ -37,7 +45,7 @@ export default function Dashboard() {
               Event Date: {event.date} | Guest{' '}
               {event.status === 0 ? 'Submissions Open' : 'Submissions Closed'}
             </p>
-            <div>
+            <div className={styles.btnContainer}>
               <Link
                 className={styles.link}
                 to={`/dashboard/${event.invite_id}`}
@@ -46,7 +54,7 @@ export default function Dashboard() {
               </Link>
 
               <img
-                src='../../server/public/assets/tree.PNG'
+                src='/assets/tree.PNG'
                 alt='christmas tree'
                 width='40'
                 className={styles.treeImage}

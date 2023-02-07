@@ -7,6 +7,13 @@ import { describe, expect, it } from 'vitest'
 
 import SSHome from '../SecretSantaHome/SSHome'
 
+vi.mock('@auth0/auth0-react', () => ({
+  useAuth0: () => ({
+    isAuthenticated: true,
+    getAccessTokenSilently: () => 'fake token',
+  }),
+}))
+
 describe('CreateEvent component test', async () => {
   it('renders', () => {
     render(<SSHome />, { wrapper: MemoryRouter })
@@ -19,8 +26,8 @@ describe('CreateEvent component test', async () => {
   it('has an link', async () => {
     render(<SSHome />, { wrapper: MemoryRouter })
     const link = await screen.findByRole('link', {
-      name: /LET'S GET STARTED!/i,
+      name: /Register | Login/i,
     })
-    expect(link.href).toMatch('event')
+    expect(link.href).toContain('event')
   })
 })

@@ -13,7 +13,8 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   box-shadow: $shadow;
-  height: 60rem;
+  height: auto;
+  // margin-top: 9.6rem;
 
   position: relative;
 
@@ -75,7 +76,8 @@
       background-color: $headerPrimary;
       display: flex;
       flex-direction: row;
-      width: 15rem;
+      height: auto;
+      width: 25rem;
       justify-content: space-between;
       padding: 1rem 2rem;
       border-radius: 10px;
@@ -109,8 +111,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto, 1fr);
-    max-width: 40rem;
-    width: 40rem;
+    max-width: 60rem;
+    width: 100%;
     justify-items: center;
 
     .guestWrapper {
@@ -121,7 +123,7 @@
       align-items: center;
       padding: 2rem 1rem;
       border-radius: 10px;
-      width: 10rem;
+      width: 15rem;
       margin: 1rem 0rem;
       height: 1.5rem;
 
@@ -280,6 +282,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  border: 1px solid $headerPrimary;
 
   &:hover {
     background-color: $lighterMainGreen;
@@ -293,7 +296,7 @@
 
   .nameTooltip {
     visibility: hidden;
-    width: 12rem;
+    width: fit-content;
     background-color: $headerTertiary;
     border: 1px solid $headerSecondary;
 
@@ -309,5 +312,240 @@
 
   &:hover .nameTooltip {
     visibility: visible;
+    min-width: 15rem;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 59em) {
+  .guestContainer {
+    min-height: 70rem;
+    margin-top: 0;
+
+    .unsortedGuests {
+      .participantListItem {
+        // width: 50rem;
+
+        .unsortedGuestsGrid {
+          padding: 5rem;
+          max-width: 75rem;
+          width: 100%;
+          gap: 1rem;
+
+          .guestWrapper {
+            min-width: 20rem;
+            margin: 0;
+            height: 2.5rem;
+            padding: 2rem;
+
+            p {
+              font-size: 3.2rem;
+            }
+
+            button {
+              height: fit-content;
+              width: auto;
+              font-size: 2.2rem;
+            }
+          }
+        }
+        .guestWrapper {
+          min-width: 35rem;
+
+          margin: 0;
+          height: auto;
+          padding: 2rem;
+
+          p {
+            font-size: 3.2rem;
+          }
+
+          button {
+            height: fit-content;
+            width: auto;
+            font-size: 2.2rem;
+          }
+        }
+      }
+    }
+
+    .drawBtn {
+      width: 22rem;
+    }
+
+    .treeImg {
+      height: 25rem;
+
+      left: 0rem;
+      top: 0rem;
+    }
+  }
+}
+
+@media (max-width: 44em) {
+  .guestContainer {
+    min-height: 70rem;
+    margin-top: 0;
+
+    .unsortedGuests {
+      .participantListItem {
+        // width: 50rem;
+
+        .unsortedGuestsGrid {
+          // grid-template-columns: 1fr 1fr;
+          // height: 100%;
+          padding: 5rem;
+          max-width: 70rem;
+          width: 100%;
+          gap: 1rem;
+
+          .guestWrapper {
+            min-width: 18rem;
+            margin: 0;
+            // height: 2.5rem;
+            padding: 2rem;
+            width: 20rem;
+
+            p {
+              font-size: 3.2rem;
+            }
+
+            button {
+              height: fit-content;
+              width: auto;
+              font-size: 2.2rem;
+            }
+          }
+        }
+        .guestWrapper {
+          min-width: 18rem;
+          margin: 0;
+          height: auto;
+          padding: 2rem;
+          width: 35rem;
+
+          p {
+            font-size: 3.2rem;
+          }
+
+          button {
+            height: fit-content;
+            width: auto;
+            font-size: 2.2rem;
+          }
+        }
+      }
+    }
+
+    .drawBtn {
+      width: 20rem;
+    }
+
+    .treeImg {
+      height: 25rem;
+
+      left: 0rem;
+      top: 0rem;
+    }
+  }
+}
+
+@media (max-width: 35em) {
+  .guestContainer {
+    width: auto;
+    height: auto;
+    min-height: 90rem;
+    margin: 9rem 0;
+
+    .unsortedGuests {
+      .participantListItem {
+        .guestWrapper {
+          width: 30rem;
+          margin: 0;
+          // height: 2.5rem;
+          padding: 2rem;
+
+          p {
+            font-size: 3.2rem;
+          }
+
+          button {
+            height: fit-content;
+            width: auto;
+            font-size: 2.2rem;
+          }
+        }
+      }
+    }
+
+    .unsortedGuestsGrid {
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+      margin-top: 0;
+      padding: 4rem;
+
+      .participantListItem {
+        height: 10rem;
+
+        .guestWrapper {
+          width: 15rem;
+          margin: 0;
+          height: 2.5rem;
+        }
+      }
+    }
+    .treeImg {
+      height: 20rem;
+
+      // position: absolute;
+
+      left: -1rem;
+      top: 10rem;
+    }
+
+    .drawBtn {
+      margin: 0;
+      font-size: 3.2rem;
+      padding: 1rem 4rem;
+
+      &:hover {
+        background-color: $lighterMainGreen;
+        border: none;
+      }
+    }
+
+    .sortedGuests {
+      grid-template-columns: auto;
+      max-width: 45rem;
+      height: 100%;
+
+      .assignedGuestWrapper {
+        height: 6rem;
+
+        .arrowThing {
+          font-size: 6rem;
+        }
+
+        p {
+          font-size: 3.2rem;
+        }
+
+        button {
+          font-size: 2.2rem;
+          width: 10rem;
+          padding: 1rem;
+        }
+      }
+    }
+    .sortedGuestsGrid {
+      grid-template-columns: auto;
+      height: 100%;
+    }
+  }
+}
+
+.nameWrapper {
+  .nameTooltip {
+    width: 8rem;
   }
 }

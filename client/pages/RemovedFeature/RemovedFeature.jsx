@@ -28,7 +28,7 @@ export default function RemovedFeature() {
         {countdown} seconds.
       </div>
       <img
-        src='/server/public/assets/Secret-Santa-.png'
+        src='/assets/Secret-Santa-.png'
         alt='Feature removed'
         className='removed-feature__image'
       />

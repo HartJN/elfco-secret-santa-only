@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
+import { useEffect, useState } from 'react'
 
 import { createEvent } from '../../apiClient/event.js'
 import styles from './CreateEvent.module.scss'
@@ -6,27 +7,38 @@ import CreateEventForm from './CreateEventForm.jsx'
 import EventCreated from './EventCreated.jsx'
 
 export default function Event() {
+  const { getAccessTokenSilently, isAuthenticated, loginWithRedirect } =
+    useAuth0()
+
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
   const [budget, setBudget] = useState('')
   const [eventCreated, setEventCreated] = useState(false)
   const [link, setLink] = useState(null)
 
+  useEffect(() => {
+    if (!isAuthenticated) {
+      loginWithRedirect()
+    }
+  }, [isAuthenticated])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const host_id = 69
+    const token = await getAccessTokenSilently()
 
-    const event = { name, date, budget, host_id }
+    const event = { name, date, budget }
 
-    const newEvent = await createEvent(event)
+    const newEvent = await createEvent(event, token)
 
     setLink(newEvent.invite_id)
     setEventCreated(true)
   }
 
   const copyLink = () => {
-    navigator.clipboard.writeText(`localhost:5173/invite/${link}`)
+    navigator.clipboard.writeText(
+      `https://elfco-secret-santa.herokuapp.com/invite/${link}`
+    )
   }
 
   return (

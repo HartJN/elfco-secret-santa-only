@@ -232,3 +232,58 @@
     }
   }
 }
+
+@media (max-width: 59em) {
+  .inviteContainer {
+    width: 65rem;
+  }
+}
+
+@media (max-width: 44em) {
+  .inviteContainer {
+    width: 55rem;
+    min-height: 70rem;
+  }
+}
+
+@media (max-width: 35em) {
+  .inviteContainer {
+    padding: 5rem;
+    width: 45rem;
+    height: 80rem;
+    justify-content: flex-start;
+    gap: 5rem;
+
+    h2 {
+      font-size: 3.8rem;
+    }
+
+    h3 {
+      font-size: 4.2rem;
+    }
+
+    img {
+      height: 10rem;
+      width: auto;
+      bottom: 2rem;
+      right: 2rem;
+    }
+    .header {
+      font-size: 5.6rem;
+    }
+    .inviteForm {
+      label {
+        font-size: 1.4rem;
+      }
+      input {
+        font-size: 2.4rem;
+        width: 80%;
+      }
+      button {
+        margin-top: 2rem;
+        width: 80%;
+        font-size: 2.4rem;
+      }
+    }
+  }
+}

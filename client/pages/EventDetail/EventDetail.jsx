@@ -1,5 +1,6 @@
+import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 import {
   deleteGuest,
@@ -13,11 +14,21 @@ import styles from './EventDetail.module.scss'
 import ParticipantList from './ParticipantList'
 
 export default function EventDetail() {
+  const { getAccessTokenSilently } = useAuth0()
+  const { isAuthenticated } = useAuth0()
+  const navigate = useNavigate()
+
   const { event_id } = useParams()
 
   const [guestList, setGuestList] = useState([])
 
   const [assigned, setAssigned] = useState([])
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/')
+    }
+  }, [isAuthenticated])
 
   const handleDelete = async (id, event_id) => {
     const participants = await deleteGuest(id, event_id)
@@ -26,7 +37,8 @@ export default function EventDetail() {
   }
 
   const handleFinalize = async () => {
-    const finalization = await finalizeEvent(event_id)
+    const token = await getAccessTokenSilently()
+    const finalization = await finalizeEvent(event_id, token)
 
     setGuestList(finalization.participants)
 
@@ -35,8 +47,9 @@ export default function EventDetail() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const participants = await getAllParticipants(event_id)
-      const event = await getEvent(event_id)
+      const token = await getAccessTokenSilently()
+      const participants = await getAllParticipants(event_id, token)
+      const event = await getEvent(event_id, token)
       setGuestList(participants)
 
       setAssigned(event.status)
@@ -65,7 +78,7 @@ export default function EventDetail() {
         />
       )}
       <img
-        src='/server/public/assets/tree.PNG'
+        src='/assets/tree.PNG'
         alt='a cartoon of a person dressed as a christmas tree'
         draggable='false'
         className={styles.treeImg}
