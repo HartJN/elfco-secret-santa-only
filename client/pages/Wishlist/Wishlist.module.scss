@@ -8,7 +8,7 @@
   background-color: $white;
   padding: 5rem;
 
-  width: 80rem;
+  width: 100rem;
   margin: 0 auto;
 
   position: relative;
@@ -16,7 +16,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   box-shadow: $shadow;
-  min-height: 50rem;
+  min-height: 70rem;
 
   .header {
     color: $bodyRed;
@@ -211,7 +211,7 @@
     max-width: 50rem;
 
     p {
-      margin: 0 auto;
+      // margin: 0 auto;
       text-align: left;
 
       color: $text-white;
@@ -367,8 +367,90 @@
   }
 }
 
+@media (max-width: 59em) {
+  .eventContainer {
+    background-color: red;
+    width: 75rem;
+    height: 70rem;
+
+    .createEventContainer {
+      p {
+        font-size: 3rem;
+      }
+
+      .assignedName {
+        font-size: 4.2rem;
+      }
+      .catImg {
+        width: 25rem;
+        height: auto;
+        left: -15rem;
+        bottom: -25rem;
+      }
+      .treeImg {
+        width: 20rem;
+        height: auto;
+        left: -15rem;
+        bottom: -20rem;
+      }
+    }
+    .linkContainer {
+      display: none;
+    }
+
+    .assignedWishlist {
+      min-height: 20rem;
+
+      .treeImAssigned {
+        width: 20rem;
+        height: auto;
+        left: -20rem;
+        bottom: -20rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 44em) {
+  .eventContainer {
+    background-color: rgba(0, 0, 255, 0.13);
+    width: 65rem;
+    height: 70rem;
+
+    .createEventContainer {
+      .catImg {
+        width: 25rem;
+        height: auto;
+        left: -15rem;
+        bottom: -25rem;
+      }
+      .treeImg {
+        width: 20rem;
+        height: auto;
+        left: -15rem;
+        bottom: -20rem;
+      }
+    }
+    .linkContainer {
+      display: none;
+    }
+
+    .assignedWishlist {
+      min-height: 20rem;
+
+      .treeImAssigned {
+        width: 20rem;
+        height: auto;
+        left: -15rem;
+        bottom: -20rem;
+      }
+    }
+  }
+}
+
 @media (max-width: 35em) {
   .eventContainer {
+    background-color: pink;
     padding: 5rem;
     width: 45rem;
     height: 80rem;
@@ -430,8 +512,8 @@
       .catImg {
         width: 20rem;
         height: auto;
-        left: -12rem;
-        bottom: -20rem;
+        left: -15rem;
+        bottom: -15rem;
       }
 
       .secondaryHeading {
