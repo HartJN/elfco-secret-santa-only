@@ -1,9 +1,8 @@
 const dotenv = require('dotenv')
 const path = require('node:path')
-const { fileURLToPath } = require('node:url')
+
 const pg = require('pg')
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 dotenv.config()
 
 const defaults = {
