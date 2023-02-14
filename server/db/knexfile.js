@@ -1,7 +1,10 @@
+import dotenv from 'dotenv'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import pg from 'pg'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+dotenv.config({ path: path.join(__dirname, '../..', '.env') })
 
 const defaults = {
   useNullAsDefault: true,
@@ -14,37 +17,48 @@ const defaults = {
     loadExtensions: ['.mjs'],
   },
 }
+pg.defaults.ssl = process.env.NODE_ENV === 'production'
 
-/**
- * @type { Object.<string, import("knex").Knex.Config> }
- */
-export default {
+module.exports = {
   development: {
     ...defaults,
-    client: 'sqlite3',
+    client: process.env.CLIENT,
     connection: {
-      filename: path.resolve(__dirname, 'prod.sqlite3'),
+      database: process.env.DATABASE,
+      user: process.env.PG_USER,
+      password: process.env.PASSWORD,
     },
-    useNullAsDefault: true,
+    pool: {
+      min: 2,
+      max: 10,
+    },
   },
+
   test: {
     ...defaults,
     client: 'sqlite3',
     connection: {
       filename: ':memory:',
     },
-    seeds: {
-      ...defaults.seeds,
-      directory: path.resolve(__dirname, 'test-seeds'),
-    },
+    useNullAsDefault: true,
   },
 
   production: {
     ...defaults,
-    client: 'sqlite3',
+    client: process.env.CLIENT,
     connection: {
-      filename: path.resolve(__dirname, 'prod.sqlite3'),
+      host: process.env.PG_HOST,
+      port: process.env.PG_PORT,
+      database: process.env.PG_DATABASE,
+      user: process.env.PG_USER,
+      password: process.env.PG_PASSWORD,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     },
-    useNullAsDefault: true,
+    pool: {
+      min: 2,
+      max: 10,
+    },
   },
 }
