@@ -3,7 +3,7 @@ const path = require('node:path')
 
 const pg = require('pg')
 
-dotenv.config()
+dotenv.config({ path: path.join(__dirname, '../..', '.env') })
 
 const defaults = {
   useNullAsDefault: true,
