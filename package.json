@@ -17,7 +17,7 @@
     "db:seed": "npm run knex seed:run",
     "db:seed:make": "npm run knex seed:make -- -x mjs",
     "db:reset": "rm -f server/db/dev.sqlite3 && npm run db:migrate && npm run db:seed",
-    "knex": "knex --knexfile server/db/knexfile.js",
+    "knex": "knex --knexfile server/db/knexfile.cjs",
     "lint": "eslint --ext .js,.jsx .",
     "format": "prettier --write .",
     "test": "vitest",
