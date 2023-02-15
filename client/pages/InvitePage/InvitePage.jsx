@@ -18,7 +18,6 @@ export default function InvitePage() {
     const getEvent = async () => {
       try {
         const event = await getEventByInviteCode(invite_id)
-        console.log('🚀 ~ file: InvitePage.jsx:21 ~ getEvent ~ event', event)
         setNewEvent(event)
       } catch (err) {
         console.error(err.message)
@@ -44,7 +43,6 @@ export default function InvitePage() {
       console.error(err.message)
     }
   }
-  console.log(event.status)
 
   if (event.status === 1) {
     return (

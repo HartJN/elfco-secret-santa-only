@@ -6,7 +6,7 @@ import connection from '../connection.js'
 
 export function createEvent(event, db = connection) {
   const { host_id, invite_id, name, budget, date } = event
-  console.log('hit createEvent', event)
+
   return db('event')
     .insert({
       host_id,
