@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import styles from './App.module.scss'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
+import Layout from './Layout'
 import CreateEvent from './pages/CreateEvent/CreateEvent'
 import Dashboard from './pages/Dashboard/Dashboard'
 import EventDetail from './pages/EventDetail/EventDetail'
@@ -18,10 +19,7 @@ import Wishlist from './pages/Wishlist/Wishlist'
 function App() {
   return (
     <div className={styles.app}>
-      <header className={styles.headerApp}>
-        <Navbar />
-      </header>
-      <main className={styles.mainApp}>
+      <Layout>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/secretsanta' element={<SSHome />} />
@@ -32,10 +30,7 @@ function App() {
           <Route path='/invite/:invite_id' element={<InvitePage />} />
           <Route path='/removedfeature' element={<RemovedFeature />} />
         </Routes>
-      </main>
-      <footer className={styles.footerApp}>
-        <Footer />
-      </footer>
+      </Layout>
     </div>
   )
 }
