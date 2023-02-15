@@ -43,7 +43,9 @@ export default function Dashboard() {
             <p>
               {' '}
               Event Date: {event.date} | Guest{' '}
-              {event.status === 0 ? 'Submissions Open' : 'Submissions Closed'}
+              {event.status === false
+                ? 'Submissions Open'
+                : 'Submissions Closed'}
             </p>
             <div className={styles.btnContainer}>
               <Link
