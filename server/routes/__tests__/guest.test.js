@@ -28,7 +28,7 @@ describe('GET /:id', () => {
       {
         id: 0,
         guest_code: '9ACE6AD157D6F81D9C774D39A287DA10',
-        event_id: 1,
+        event_id: '1',
         name: 'Bruno',
         wishlist: 'gardening tools and soil',
         gifter_id: null,
