@@ -1,8 +1,6 @@
 const dotenv = require('dotenv')
 const path = require('node:path')
 
-const pg = require('pg')
-
 dotenv.config({ path: path.join(__dirname, '../..', '.env') })
 
 const defaults = {
@@ -16,7 +14,6 @@ const defaults = {
     loadExtensions: ['.mjs'],
   },
 }
-pg.defaults.ssl = process.env.NODE_ENV === 'production'
 
 module.exports = {
   development: {
