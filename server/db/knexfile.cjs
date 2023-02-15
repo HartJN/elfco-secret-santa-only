@@ -42,9 +42,15 @@ module.exports = {
   production: {
     ...defaults,
     client: process.env.CLIENT,
-    connection: process.env.DATABASE_URL,
-    ssl: {
-      rejectUnauthorized: false,
+    connection: {
+      host: process.env.PG_HOST,
+      port: process.env.PG_PORT,
+      database: process.env.PG_DATABASE,
+      user: process.env.PG_USER,
+      password: process.env.PG_PASSWORD,
+      ssl: {
+        rejectUnauthorized: false,
+      },
     },
     pool: {
       min: 2,
