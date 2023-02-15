@@ -22,11 +22,7 @@ module.exports = {
   development: {
     ...defaults,
     client: process.env.CLIENT,
-    connection: {
-      database: process.env.DATABASE,
-      user: process.env.PG_USER,
-      password: process.env.PASSWORD,
-    },
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10,
