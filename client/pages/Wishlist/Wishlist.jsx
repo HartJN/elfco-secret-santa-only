@@ -18,6 +18,7 @@ export default function Wishlist() {
 
   const [event, setEvent] = useState(null)
   const [eventResult, setEventResult] = useState([])
+
   const [assignedWishlist, setAssignedWishlist] = useState(null)
 
   const [showForm, setShowForm] = useState(true)
@@ -83,7 +84,7 @@ export default function Wishlist() {
     <div>
       <div className={styles.eventContainer}>
         <h1 className={styles.header}>Secret Santa</h1>
-        {eventResult === 1 ? (
+        {eventResult === true ? (
           <AssignedWishlist
             assignedWishlist={assignedWishlist}
             handleDate={handleDate}

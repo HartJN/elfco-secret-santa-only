@@ -6,14 +6,16 @@ import connection from '../connection.js'
 
 export function createEvent(event, db = connection) {
   const { host_id, invite_id, name, budget, date } = event
-
-  return db('event').insert({
-    host_id,
-    invite_id,
-    event_name: name,
-    budget,
-    date,
-  })
+  console.log('hit createEvent', event)
+  return db('event')
+    .insert({
+      host_id,
+      invite_id,
+      event_name: name,
+      budget,
+      date,
+    })
+    .returning('event_id')
 }
 
 export function getEvents(host_id, db = connection) {
@@ -28,7 +30,7 @@ export function handleDelete(guest_id, db = connection) {
   return db('guest').where({ id: guest_id }).del().returning('*')
 }
 
-export function getEventById(event_id, db = connection) {
+export function getEventById({ event_id }, db = connection) {
   return db('event').where({ event_id }).first()
 }
 

@@ -31,12 +31,13 @@ export default {
 
       eventData.invite_id = uuidv4()
 
-      const newEventObj = await createEvent(eventData)
+      const [newEventObj] = await createEvent(eventData)
 
       const fullEventInfo = await getEventById(newEventObj)
 
       res.status(201).json(fullEventInfo)
     } catch (err) {
+      console.log('error in createEvent Controller')
       res.status(500).json({ error: err.message })
     }
   },
@@ -45,6 +46,7 @@ export default {
     const { event_id } = req.params
 
     const event = await finaliseEvent(event_id)
+    console.log('🚀 ~ finaliseEvent: ~ event', event)
 
     res.json(event)
   },

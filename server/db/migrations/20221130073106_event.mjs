@@ -1,10 +1,10 @@
 export const up = async (knex) => {
   await knex.schema.createTable('event', (t) => {
     t.increments('event_id')
-    t.integer('host_id')
+    t.string('host_id')
     t.string('invite_id')
     t.string('event_name')
-    t.integer('budget')
+    t.string('budget')
     t.string('date')
     t.boolean('status').defaultTo(false)
   })
