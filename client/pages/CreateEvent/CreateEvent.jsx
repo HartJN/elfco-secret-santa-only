@@ -9,6 +9,8 @@ import EventCreated from './EventCreated.jsx'
 export default function Event() {
   const { getAccessTokenSilently, isAuthenticated, loginWithRedirect } =
     useAuth0()
+  console.log('🚀 ~ Event ~ isAuthenticated', isAuthenticated)
+  const [isLoading, setIsLoading] = useState(true)
 
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
@@ -17,10 +19,15 @@ export default function Event() {
   const [link, setLink] = useState(null)
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      loginWithRedirect()
+    async function checkAuth() {
+      if (isAuthenticated) {
+        setIsLoading(false)
+      } else {
+        await loginWithRedirect()
+      }
     }
-  }, [isAuthenticated])
+    checkAuth()
+  }, [isAuthenticated, loginWithRedirect])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -39,6 +46,10 @@ export default function Event() {
     navigator.clipboard.writeText(
       `https://elfco-secret-santa.herokuapp.com/invite/${link}`
     )
+  }
+
+  if (isLoading) {
+    return <div>Loading...</div>
   }
 
   return (

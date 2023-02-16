@@ -1,179 +1,73 @@
 @use '../../styles/_theme' as theme;
 
-.home {
-  display: flex;
-
-  flex-direction: column;
-  // align-items: center;
-  // place-content: center;
-  height: 100%;
-  max-width: 150rem;
-  padding: 1rem;
-
-  background-color: theme.$lightBackground;
-  margin-top: 0;
+.homeContainer {
+  margin-bottom: 9.6rem;
   margin: 0 auto;
-}
+  max-width: 120rem;
 
-.imageContainer {
-  display: flex;
-  flex-direction: row;
-  place-items: center;
-  height: 100vh;
-}
-
-.imageWrapper {
-  width: fit-content;
-  margin: 0 1.5rem;
-}
-
-.links {
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 3.6rem;
-  font-family: theme.$secondary-font-family;
-  letter-spacing: 1px;
-  color: theme.$bodyRed;
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  max-width: 60rem;
-  margin-bottom: 2rem;
-  margin-top: 0px;
-  transition: transform 0.5s;
-}
-
-.image:hover {
-  transform: scale(1.1);
-}
-
-.homepageButtons {
-  border: 2px solid black;
-  background-color: white;
-  color: theme.$bodyRed;
-  padding: 0.5rem 2.4rem;
-  font-size: 2.6rem;
-  cursor: pointer;
-  border-color: #020202;
-  color: #000000;
-  border-radius: 10px;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-  font-family: theme.$body-font-family;
-}
-
-.homepageButtons a {
-  color: theme.$bodyRed;
-  border-radius: 10px;
-  font-size: 26px;
-}
-
-.homepageButtons:hover {
-  background-color: #d08c54;
-  color: rgb(255, 255, 255);
-}
-
-.homepageButtons:hover a {
-  background-color: #d08c54;
-  color: rgb(255, 255, 255);
-}
-
-@media (max-width: 84em) {
-  .home {
-    max-width: 130rem;
-  }
-
-  .image {
-    min-width: 100%;
-  }
-
-  .homepageButtons {
-    font-size: 2.4rem;
-  }
-
-  .links {
-    font-size: 3.2rem;
-  }
-}
-
-@media (max-width: 75em) {
-  .home {
-    max-width: 110rem;
-  }
-
-  .image {
-    min-width: 100%;
-  }
-
-  .homepageButtons {
-    font-size: 2.2rem;
-  }
-
-  .links {
-    font-size: 2.8rem;
-  }
-}
-
-@media (max-width: 59em) {
-  .home {
-    // max-width: 90rem;
-  }
-
-  .image {
-    min-width: 100%;
-  }
-
-  .homepageButtons {
-    font-size: 2rem;
-  }
-
-  .links {
-    font-size: 2.4rem;
-  }
-}
-
-@media (max-width: 44em) {
-  .home {
-    // max-width: 80rem;
-  }
-
-  .image {
-    min-width: 100%;
-  }
-
-  .homepageButtons {
-    font-size: 1.8rem;
-  }
-
-  .links {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 34em) {
-  .home {
-    // max-width: 50rem;
-  }
-
-  .image {
-    max-width: 30rem;
-  }
-
-  .imageContainer {
-    padding: 9.6rem;
+  .homeWrapper {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+
+    width: auto;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 4.2rem;
+      font-family: theme.$body-font-family;
+
+      color: theme.$bodyRed;
+      text-decoration: none;
+
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 2.4rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 4.2rem;
+    }
+
+    ol {
+      margin-left: 1rem;
+      li {
+        font-size: 2.4rem;
+        &::marker {
+          font-size: 2.8rem;
+          margin-right: 0.25rem;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      width: auto;
+      height: 40rem;
+
+      .image {
+        height: 100%;
+        width: auto;
+
+        transition: transform 0.5s;
+      }
+    }
+    .links {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 3.8rem;
+      font-family: theme.$body-font-family;
+      color: theme.$bodyRed;
+      text-align: center;
+      height: fit-content;
+    }
   }
 
-  .homepageButtons {
-    font-size: 1.6rem;
-  }
-
-  .links {
-    font-size: 3.6rem;
+  .image:hover {
+    transform: scale(1.1);
   }
 }
